@@ -1,4 +1,27 @@
 #!/bin/bash
 apt-get update
-apt-get install apache2
+apt-get install apache2 -y
 service apache2 start
+systemctl apache2 enable
+cd /var/www/html
+git clone https://github.com/Abinesh-g/student.git
+apt-get update
+service apache2 restart
+
+
+
+
+
+TO INSTALL AND IMPORT THE SQL FILE IN THE SQL-SERVER:
+=====================================================
+
+
+INSTALL MYSQL 	====>  sudo apt-get install mysql-server
+
+create DB	====>  mysql -u root -p 
+			enter the mysql password: 
+			1.mysql> create database details;(sql cmd)
+
+Import 		====>  mysql -u root -p details (db name) < details.sql (file name) 
+
+Export 		====>  mysqldump -u root -p details (db name) > details.sql (file name) 
